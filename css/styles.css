@@ -162,34 +162,59 @@ img {
 
 /* Image placeholders for demo */
 .image-placeholder {
-    background-color: #e2e8f0;
+    display: none;
+}
+
+img[src$=".jpg"]:not([src^="data:"]):not([src*="base64"]) {
+    min-height: 50px;
+    background-color: #f0f0f0;
+}
+
+img[src$=".jpg"] + .image-placeholder {
+    display: none;
+}
+
+img[src$=".jpg"][src^="data:"],
+img[src$=".jpg"][src*="base64"],
+img:not([src]),
+img[src=""],
+img[src="#"],
+img[src="about:blank"],
+img[src^="javascript:"] {
+    display: none;
+}
+
+img[src$=".jpg"][src^="data:"]:not([src*="base64"]) + .image-placeholder,
+img[src$=".jpg"][src=""] + .image-placeholder,
+img[src$=".jpg"][src="#"] + .image-placeholder,
+img[src$=".jpg"][src="about:blank"] + .image-placeholder,
+img[src$=".jpg"][src^="javascript:"] + .image-placeholder,
+img:not([src]) + .image-placeholder,
+img.broken + .image-placeholder {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
-    border-radius: 10px;
-    color: #94a3b8;
     height: 100%;
-    min-height: 200px;
+    width: 100%;
+    background-color: #f5f5f5;
+    color: #888;
+    font-size: 0.9em;
+    border-radius: 8px;
 }
 
 .image-placeholder i {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #555;
 }
 
 .image-placeholder.small {
-    min-height: 80px;
-    height: 80px;
-    width: 80px;
-    padding: 1rem;
-    border-radius: 50%;
+    padding: 15px;
 }
 
 .image-placeholder.small i {
-    font-size: 1.5rem;
-    margin-bottom: 0;
+    font-size: 1.5em;
 }
 
 /* Navbar */
@@ -1288,4 +1313,12 @@ img {
         flex-direction: column;
         gap: 1.5rem;
     }
+}
+
+/* Add styling for project timeline display */
+.project-timeline {
+    margin-top: 10px;
+    font-size: 0.85em;
+    color: #666;
+    font-style: italic;
 } 

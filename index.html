@@ -28,7 +28,7 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#current">Current Work</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#reviews">Reviews</a></li>
           <li><a href="#resume">Resume</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -49,14 +49,6 @@
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary">View My Work</a>
             <a href="#contact" class="btn btn-outline">Get In Touch</a>
-          </div>
-          <div class="scroll-indicator">
-            <div class="mouse">
-              <div class="wheel"></div>
-            </div>
-            <div>
-              <span class="scroll-text">Scroll Down</span>
-            </div>
           </div>
         </div>
       </div>
@@ -91,10 +83,14 @@
           </div>
           <div class="about-image" data-aos="fade-left" data-aos-delay="400">
             <div class="image-border">
-              <!-- We need a professional headshot here -->
+              <img
+                src="img/profile.jpg"
+                alt="Karim Ibrahim"
+                class="profile-image"
+              />
               <div class="image-placeholder">
                 <i class="fas fa-user"></i>
-                <p>Your photo here</p>
+                <p>Profile image</p>
               </div>
             </div>
           </div>
@@ -127,6 +123,15 @@
                 <div class="skill-item">
                   <div class="skill-info">
                     <span>Java/Spring Boot</span>
+                    <span>85%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-level" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span>Unity/C#</span>
                     <span>85%</span>
                   </div>
                   <div class="skill-bar">
@@ -230,6 +235,7 @@
           <button class="filter-btn active" data-filter="all">All</button>
           <button class="filter-btn" data-filter="web">Web</button>
           <button class="filter-btn" data-filter="app">App</button>
+          <button class="filter-btn" data-filter="vr">VR/Game</button>
           <button class="filter-btn" data-filter="design">Design</button>
         </div>
         <div class="projects-grid">
@@ -241,7 +247,10 @@
             data-aos-delay="100"
           >
             <div class="project-image">
-              <!-- Project image needed here -->
+              <img
+                src="img/project-steelduxx.jpg"
+                alt="Steelduxx Customer Portal"
+              />
               <div class="image-placeholder">
                 <i class="fas fa-globe"></i>
                 <p>Steelduxx Track & Trace</p>
@@ -272,6 +281,7 @@
                 <span class="tech-badge">Java</span>
                 <span class="tech-badge">MySQL</span>
               </div>
+              <div class="project-timeline">01/2024 - 06/2024</div>
             </div>
           </div>
 
@@ -283,7 +293,7 @@
             data-aos-delay="200"
           >
             <div class="project-image">
-              <!-- Project image needed here -->
+              <img src="img/project-tennis.jpg" alt="Tennis Match Finder" />
               <div class="image-placeholder">
                 <i class="fas fa-table-tennis"></i>
                 <p>Tennis Match Finder</p>
@@ -313,21 +323,22 @@
                 <span class="tech-badge">Firebase</span>
                 <span class="tech-badge">Dart</span>
               </div>
+              <div class="project-timeline">02/2024 - Present</div>
             </div>
           </div>
 
-          <!-- Project 3 - Cardiff Health -->
+          <!-- Project 3 - Cardiff Health (Now Design) -->
           <div
             class="project-card"
-            data-category="app"
+            data-category="design"
             data-aos="zoom-in"
             data-aos-delay="300"
           >
             <div class="project-image">
-              <!-- Project image needed here -->
+              <img src="img/project-cardiff.jpg" alt="Cardiff Healthcare App" />
               <div class="image-placeholder">
-                <i class="fas fa-heartbeat"></i>
-                <p>Healthcare App</p>
+                <i class="fas fa-paint-brush"></i>
+                <p>Healthcare App Design</p>
               </div>
               <div class="project-overlay">
                 <div class="project-links">
@@ -341,19 +352,21 @@
               </div>
             </div>
             <div class="project-info">
-              <span class="project-category">International Project</span>
+              <span class="project-category">UI/UX Design</span>
               <h3>Cardiff Healthcare App</h3>
               <p>
                 An international project creating a prototype healthcare app
-                that helps support workers track individuals under care. The app
-                allows families to monitor care quality and helps caretakers
-                plan daily activities, meals, medication, and more.
+                design that helps support workers track individuals under care.
+                The design focuses on allowing families to monitor care quality
+                and helping caretakers plan daily activities, meals, medication,
+                and more.
               </p>
               <div class="tech-stack">
-                <span class="tech-badge">Teamwork</span>
+                <span class="tech-badge">Figma</span>
                 <span class="tech-badge">Research</span>
                 <span class="tech-badge">Presentation</span>
               </div>
+              <div class="project-timeline">04/2024</div>
             </div>
           </div>
 
@@ -365,7 +378,7 @@
             data-aos-delay="400"
           >
             <div class="project-image">
-              <!-- Project image needed here -->
+              <img src="img/project-gatam.jpg" alt="GATAM Teaching Platform" />
               <div class="image-placeholder">
                 <i class="fas fa-graduation-cap"></i>
                 <p>GATAM Platform</p>
@@ -396,11 +409,101 @@
                 <span class="tech-badge">Blazor</span>
                 <span class="tech-badge">HTML/CSS</span>
               </div>
+              <div class="project-timeline">09/2024 - 01/2025</div>
+            </div>
+          </div>
+
+          <!-- Project 5 - VR Racing Game -->
+          <div
+            class="project-card"
+            data-category="vr"
+            data-aos="zoom-in"
+            data-aos-delay="500"
+          >
+            <div class="project-image">
+              <img src="img/project-vr-racing.jpg" alt="VR Racing Game" />
+              <div class="image-placeholder">
+                <i class="fas fa-gamepad"></i>
+                <p>VR Racing Game</p>
+              </div>
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="btn btn-circle"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a href="#" class="btn btn-circle"
+                    ><i class="fas fa-external-link-alt"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category">VR Game Development</span>
+              <h3>VR Racing Game with AI</h3>
+              <p>
+                Developed a VR racing game with AI-powered opponents using ML
+                agents. The project involved creating immersive racing
+                experiences with realistic physics and competitive AI racers
+                trained through machine learning.
+              </p>
+              <div class="tech-stack">
+                <span class="tech-badge">Unity</span>
+                <span class="tech-badge">C#</span>
+                <span class="tech-badge">ML Agents</span>
+                <span class="tech-badge">VR</span>
+              </div>
+              <div class="project-timeline">01/2024 - 06/2024</div>
+            </div>
+          </div>
+
+          <!-- Project 6 - James Ensor VR Experience -->
+          <div
+            class="project-card"
+            data-category="vr"
+            data-aos="zoom-in"
+            data-aos-delay="600"
+          >
+            <div class="project-image">
+              <img
+                src="img/project-ensor.jpg"
+                alt="James Ensor VR Experience"
+              />
+              <div class="image-placeholder">
+                <i class="fas fa-vr-cardboard"></i>
+                <p>Ensor VR Experience</p>
+              </div>
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="btn btn-circle"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a href="#" class="btn btn-circle"
+                    ><i class="fas fa-external-link-alt"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category">VR Experience</span>
+              <h3>James Ensor Interactive VR</h3>
+              <p>
+                Collaborated with students from diverse fields including
+                medicine, fashion, and journalism to create an interactive VR
+                experience about artist James Ensor. This cross-disciplinary
+                project emphasized teamwork and effective communication.
+              </p>
+              <div class="tech-stack">
+                <span class="tech-badge">Unity</span>
+                <span class="tech-badge">C#</span>
+                <span class="tech-badge">VR</span>
+                <span class="tech-badge">Teamwork</span>
+              </div>
+              <div class="project-timeline">09/2024 - 01/2025</div>
             </div>
           </div>
         </div>
         <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-          <a href="#" class="btn btn-primary">View All Projects</a>
+          <a href="#projects" class="btn btn-primary">View All Projects</a>
         </div>
       </div>
     </section>
@@ -435,19 +538,19 @@
             <i class="fas fa-project-diagram"></i>
             <h3>Ongoing Projects</h3>
             <p>
-              Working on several ongoing projects including Steelduxx customer
-              portal and the Tennis Match Finder app, continuously improving
-              both applications.
+              Working on several ongoing projects including the Tennis Match
+              Finder app and continuing to improve my skills in Unity and
+              Flutter development.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="testimonials" class="section">
+    <section id="reviews" class="section">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2>Testimonials</h2>
+          <h2>Reviews</h2>
           <div class="section-line"></div>
           <p class="section-subtitle">What people say about my work</p>
         </div>
@@ -461,20 +564,19 @@
             <div class="testimonial-item active">
               <div class="testimonial-content">
                 <p class="quote">
-                  "Karim delivered exceptional work that exceeded our
-                  expectations. His attention to detail and creative approach
-                  resulted in a solution that perfectly addressed our needs."
+                  "Zeer professionele en vriendelijke jongeman. Hij heeft al
+                  onze vragen vakkundig beantwoord en opgelost."
                 </p>
                 <div class="testimonial-author">
                   <div class="author-image">
-                    <!-- Testimonial person image needed -->
+                    <img src="img/testimonial-1.jpg" alt="John Smith" />
                     <div class="image-placeholder small">
                       <i class="fas fa-user"></i>
                     </div>
                   </div>
                   <div class="author-info">
-                    <h4>John Smith</h4>
-                    <span>Project Supervisor</span>
+                    <h4>Petra Caerels</h4>
+                    <span>Beego Klant</span>
                   </div>
                 </div>
               </div>
@@ -484,20 +586,19 @@
             <div class="testimonial-item">
               <div class="testimonial-content">
                 <p class="quote">
-                  "Working with Karim was a pleasure. He understood our
-                  requirements quickly and delivered the project on time with
-                  exceptional quality."
+                  "Mooi op tijd, super vriendelijk en behulpzaam. Heeft al onze
+                  vragen en problemen kunnen oplossen. Top!"
                 </p>
                 <div class="testimonial-author">
                   <div class="author-image">
-                    <!-- Testimonial person image needed -->
+                    <img src="img/testimonial-2.jpg" alt="Sarah Johnson" />
                     <div class="image-placeholder small">
                       <i class="fas fa-user"></i>
                     </div>
                   </div>
                   <div class="author-info">
-                    <h4>Sarah Johnson</h4>
-                    <span>Team Lead, Group Project</span>
+                    <h4>Koenraad Beyens</h4>
+                    <span>Beego Klant</span>
                   </div>
                 </div>
               </div>
@@ -507,20 +608,19 @@
             <div class="testimonial-item">
               <div class="testimonial-content">
                 <p class="quote">
-                  "Karim's technical expertise and problem-solving abilities are
-                  outstanding. He helped us implement complex features with ease
-                  and provided excellent documentation."
+                  "Karim is heel vriendelijk en bezorgd om de goede afloop van
+                  het probleem. wat mij betreft, mag hij nog komen."
                 </p>
                 <div class="testimonial-author">
                   <div class="author-image">
-                    <!-- Testimonial person image needed -->
+                    <img src="img/testimonial-3.jpg" alt="Michael Chen" />
                     <div class="image-placeholder small">
                       <i class="fas fa-user"></i>
                     </div>
                   </div>
                   <div class="author-info">
-                    <h4>Michael Chen</h4>
-                    <span>Course Instructor, AP Hogeschool</span>
+                    <h4>Serge Desouter</h4>
+                    <span>Beego Klant</span>
                   </div>
                 </div>
               </div>
@@ -570,7 +670,7 @@
             <div class="timeline">
               <div class="timeline-wrapper left">
                 <div class="timeline-content">
-                  <div class="timeline-date">2024 - Present</div>
+                  <div class="timeline-date">02/2025 - 06/2025</div>
                   <h3>Intern - App Developer</h3>
                   <h4>Radio Holland Belgium NV</h4>
                   <p>
@@ -581,22 +681,43 @@
               </div>
               <div class="timeline-wrapper right">
                 <div class="timeline-content">
-                  <div class="timeline-date">01/2024 - Present</div>
+                  <div class="timeline-date">09/2024 - 01/2025</div>
+                  <h3>James Ensor VR Experience</h3>
+                  <h4>Cross-Disciplinary Project</h4>
+                  <p>
+                    Collaborated with students from diverse fields on an
+                    interactive VR experience.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-wrapper left">
+                <div class="timeline-content">
+                  <div class="timeline-date">09/2024 - 01/2025</div>
+                  <h3>GATAM Teaching Platform</h3>
+                  <h4>School Project</h4>
+                  <p>
+                    Developed an educational platform using ASP.NET and Blazor.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-wrapper right">
+                <div class="timeline-content">
+                  <div class="timeline-date">01/2024 - 06/2024</div>
                   <h3>Customer Portal Developer</h3>
                   <h4>Steelduxx Project</h4>
                   <p>
-                    Developing track and trace website with order management
+                    Developed track and trace website with order management
                     capabilities.
                   </p>
                 </div>
               </div>
               <div class="timeline-wrapper left">
                 <div class="timeline-content">
-                  <div class="timeline-date">04/2024</div>
-                  <h3>International Project</h3>
-                  <h4>Cardiff Healthcare App</h4>
+                  <div class="timeline-date">01/2024 - 06/2024</div>
+                  <h3>VR Racing Game with AI</h3>
+                  <h4>Unity Game Project</h4>
                   <p>
-                    Collaborated on an international healthcare app prototype.
+                    Created a VR racing game with AI opponents using ML agents.
                   </p>
                 </div>
               </div>
@@ -643,14 +764,7 @@
                 <i class="fas fa-envelope"></i>
                 <div>
                   <h4>Email</h4>
-                  <p>your.email@example.com</p>
-                </div>
-              </div>
-              <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <div>
-                  <h4>Phone</h4>
-                  <p>+32 XXX XXX XXX</p>
+                  <p>KarimKhaledIbrahim2003@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -703,7 +817,7 @@
             <a href="#"><i class="fab fa-github"></i></a>
             <a href="#"><i class="fab fa-linkedin"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="mailto:your-email@example.com"
+            <a href="mailto:KarimKhaledIbrahim2003@gmail.com"
               ><i class="fas fa-envelope"></i
             ></a>
           </div>

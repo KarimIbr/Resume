@@ -1,0 +1,82 @@
+# WEBSITE IMAGE REQUIREMENTS
+
+## REQUIRED IMAGES
+
+1. **Hero Background Image**
+   - Filename: `hero-bg.jpg`
+   - Description: A high-quality tech/code related background image
+   - Size: 1920x1080px (widescreen)
+   - Format: JPG (compressed for web)
+   - Location: Display in the header/hero section background
+
+2. **Profile Photo**
+   - Filename: `profile.jpg`
+   - Description: Professional headshot/portrait photo
+   - Size: 500x500px (square)
+   - Format: JPG
+   - Location: About section
+
+3. **Project Images**
+   - Filename: `project-steelduxx.jpg`
+   - Description: Screenshot of the Steelduxx customer portal interface
+   - Size: 800x600px (4:3 ratio)
+   - Format: JPG
+   - Location: Projects section
+
+   - Filename: `project-tennis.jpg`
+   - Description: Screenshot or mockup of the Tennis Match Finder app
+   - Size: 800x600px (4:3 ratio)
+   - Format: JPG
+   - Location: Projects section
+
+   - Filename: `project-cardiff.jpg`
+   - Description: Screenshot of Figma design for the Cardiff Healthcare app
+   - Size: 800x600px (4:3 ratio)
+   - Format: JPG
+   - Location: Projects section
+
+   - Filename: `project-gatam.jpg`
+   - Description: Screenshot of the GATAM teaching platform
+   - Size: 800x600px (4:3 ratio)
+   - Format: JPG
+   - Location: Projects section
+
+   - Filename: `project-vr-racing.jpg`
+   - Description: Screenshot of the VR racing game
+   - Size: 800x600px (4:3 ratio)
+   - Format: JPG
+   - Location: Projects section
+
+   - Filename: `project-ensor.jpg`
+   - Description: Screenshot of the James Ensor VR experience
+   - Size: 800x600px (4:3 ratio)
+   - Format: JPG
+   - Location: Projects section
+
+4. **Testimonial Photos**
+   - Filename: `testimonial-1.jpg`
+   - Description: Headshot of John Smith
+   - Size: 150x150px (square)
+   - Format: JPG
+   - Location: Testimonials section
+
+   - Filename: `testimonial-2.jpg`
+   - Description: Headshot of Sarah Johnson
+   - Size: 150x150px (square)
+   - Format: JPG
+   - Location: Testimonials section
+
+   - Filename: `testimonial-3.jpg`
+   - Description: Headshot of Michael Chen
+   - Size: 150x150px (square)
+   - Format: JPG
+   - Location: Testimonials section
+
+## IMAGE OPTIMIZATION TIPS
+
+1. Compress all images for web to ensure fast loading times
+2. Use consistent aspect ratios for each category of images
+3. If you don't have actual project screenshots, create professional mockups
+4. For testimonials, use professional headshots or stock images
+5. Make sure any text in screenshots is readable at the given size
+6. Keep all images under 300KB when possible to maintain good page performance 
