@@ -169,44 +169,13 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(nextTestimonial, 5000);
     }
 
-    // Form validation
+    // Contact form handling (removed since we're not using a real backend)
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Simple validation
-            let isValid = true;
-            const inputs = this.querySelectorAll('input, textarea');
-            
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    isValid = false;
-                    input.classList.add('error');
-                } else {
-                    input.classList.remove('error');
-                }
-            });
-            
-            if (isValid) {
-                // Here you would typically send the form data to a server
-                // For demonstration, we'll just show a success message
-                const formElements = this.elements;
-                for (let i = 0; i < formElements.length; i++) {
-                    formElements[i].disabled = true;
-                }
-                
-                this.innerHTML += '<div class="form-success">Message sent successfully! I\'ll get back to you soon.</div>';
-                
-                // Reset form after a delay
-                setTimeout(() => {
-                    this.reset();
-                    this.querySelector('.form-success').remove();
-                    for (let i = 0; i < formElements.length; i++) {
-                        formElements[i].disabled = false;
-                    }
-                }, 3000);
-            }
+            // Form submission is disabled intentionally
+            // Direct users to email instead (as shown in the form notice)
         });
     }
     

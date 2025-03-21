@@ -1035,6 +1035,24 @@ img.broken + .image-placeholder {
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
+.form-notice {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.form-notice p {
+    color: #4b5563;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.form-notice a {
+    font-weight: 500;
+}
+
 /* Footer */
 .footer {
     background: var(--dark-color);
@@ -1424,4 +1442,54 @@ img.broken + .image-placeholder {
     .experience-title {
         margin-top: 1rem;
     }
+}
+
+/* Experience Section New Styles */
+.experience-company-info {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.company-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.experience-highlights {
+    margin-top: 1.2rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.8rem;
+}
+
+.highlight-item i {
+    color: var(--primary-color);
+    margin-right: 0.8rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.highlight-item span {
+    color: #4b5563;
+}
+
+/* Add styling for the testimonial image placeholders to always show */
+.author-image .image-placeholder.small {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+}
+
+.author-image .image-placeholder.small i {
+    font-size: 1.5rem;
+    color: #94a3b8;
 } 
