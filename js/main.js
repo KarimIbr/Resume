@@ -28,22 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    // Parallax effect for hero background
-    window.addEventListener('scroll', () => {
-        const parallax = document.querySelector('.parallax');
-        if (parallax) {
-            const scrollPosition = window.pageYOffset;
-            parallax.style.transform = `translateY(${scrollPosition * 0.4}px)`;
-        }
-    });
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
 
     // Back to top button
     const backToTopButton = document.querySelector('.back-to-top');
@@ -169,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(nextTestimonial, 5000);
     }
 
-    // Contact form handling (removed since we're not using a real backend)
+    // Contact form handling
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -179,11 +172,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Set skill bar widths dynamically
-    document.querySelectorAll('.skill-level').forEach(skillBar => {
-        const percent = skillBar.closest('.skill-item').querySelector('.skill-info span:last-child').textContent;
-        skillBar.style.setProperty('--skill-percent', percent);
-    });
+    // Set active page in navigation
+    const setActivePage = () => {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.nav-links a');
+        
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    };
+    
+    setActivePage();
 
     // Update the copyright year automatically
     const currentYear = new Date().getFullYear();
@@ -192,4 +194,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (copyrightYear) {
         copyrightYear.textContent = copyrightYear.textContent.replace('2023', currentYear);
     }
+    
+    // Image placeholder fallback
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', function() {
+            this.style.display = 'none';
+            const placeholder = this.parentElement.querySelector('.image-placeholder');
+            if (placeholder) {
+                placeholder.style.display = 'flex';
+            }
+        });
+        
+        img.addEventListener('load', function() {
+            const placeholder = this.parentElement.querySelector('.image-placeholder');
+            if (placeholder) {
+                placeholder.style.display = 'none';
+            }
+        });
+    });
 }); 

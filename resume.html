@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume - Karim Ibrahim</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/modern.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Resume page specific styles */
+      .resume-page {
+        padding: 120px 0 80px;
+      }
+
+      .resume-page-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .resume-page-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: var(--dark-color);
+      }
+
+      .resume-page-header p {
+        color: var(--gray-color);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .resume-download-section {
+        background-color: white;
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--card-shadow);
+        padding: 40px;
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .dark-mode .resume-download-section {
+        background-color: #2a2f35;
+      }
+
+      .resume-download-section p {
+        margin-bottom: 25px;
+      }
+
+      .resume-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .timeline-container {
+        position: relative;
+        max-width: 1000px;
+        margin: 40px auto;
+      }
+
+      .timeline {
+        position: relative;
+      }
+
+      .timeline::after {
+        content: "";
+        position: absolute;
+        width: 4px;
+        background: linear-gradient(
+          to bottom,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      .timeline-wrapper {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+      }
+
+      .timeline-wrapper.left {
+        left: 0;
+      }
+
+      .timeline-wrapper.right {
+        left: 50%;
+      }
+
+      .timeline-wrapper::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        border: 4px solid var(--primary-color);
+        top: 20px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .dark-mode .timeline-wrapper::after {
+        background-color: #2a2f35;
+      }
+
+      .timeline-wrapper.left::after {
+        right: -12px;
+      }
+
+      .timeline-wrapper.right::after {
+        left: -12px;
+      }
+
+      .timeline-content {
+        background-color: white;
+        padding: 30px;
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--card-shadow);
+        position: relative;
+      }
+
+      .dark-mode .timeline-content {
+        background-color: #2a2f35;
+      }
+
+      .timeline-content::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 20px;
+        border: 10px solid;
+      }
+
+      .timeline-wrapper.left .timeline-content::after {
+        border-color: transparent white transparent transparent;
+        right: -20px;
+      }
+
+      .timeline-wrapper.right .timeline-content::after {
+        border-color: transparent transparent transparent white;
+        left: -20px;
+      }
+
+      .dark-mode .timeline-wrapper.left .timeline-content::after {
+        border-color: transparent #2a2f35 transparent transparent;
+      }
+
+      .dark-mode .timeline-wrapper.right .timeline-content::after {
+        border-color: transparent transparent transparent #2a2f35;
+      }
+
+      .timeline-date {
+        display: inline-block;
+        padding: 5px 15px;
+        background-color: rgba(67, 97, 238, 0.1);
+        color: var(--primary-color);
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .timeline-content h3 {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+
+      .timeline-content h4 {
+        font-size: 16px;
+        color: var(--gray-color);
+        margin-bottom: 15px;
+        font-weight: 500;
+      }
+
+      .timeline-content p {
+        line-height: 1.6;
+      }
+
+      @media (max-width: 768px) {
+        .timeline::after {
+          left: 31px;
+        }
+
+        .timeline-wrapper {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+
+        .timeline-wrapper.right {
+          left: 0;
+        }
+
+        .timeline-wrapper.left::after,
+        .timeline-wrapper.right::after {
+          left: 21px;
+        }
+
+        .timeline-wrapper.left .timeline-content::after,
+        .timeline-wrapper.right .timeline-content::after {
+          left: -20px;
+          border-color: transparent white transparent transparent;
+        }
+
+        .dark-mode .timeline-wrapper.left .timeline-content::after,
+        .dark-mode .timeline-wrapper.right .timeline-content::after {
+          border-color: transparent #2a2f35 transparent transparent;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar modern-nav">
+      <div class="container">
+        <div class="logo">
+          <span class="logo-text">Karim Ibrahim</span>
+          <span class="logo-dot"></span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </div>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <section class="resume-page">
+      <div class="container">
+        <div class="resume-page-header" data-aos="fade-up">
+          <h1>My Resume</h1>
+          <p>
+            An overview of my professional experience, education, and
+            achievements
+          </p>
+        </div>
+
+        <div
+          class="resume-download-section"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <p>
+            You can view or download my complete resume using the buttons below:
+          </p>
+          <div class="resume-buttons">
+            <a
+              href="Karim-Ibrahim-Resume.pdf"
+              class="btn btn-primary"
+              target="_blank"
+            >
+              <i class="fas fa-eye"></i> View Resume
+            </a>
+            <a href="Karim-Ibrahim-Resume.pdf" class="btn btn-outline" download>
+              <i class="fas fa-download"></i> Download Resume
+            </a>
+          </div>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline">
+            <div class="timeline-wrapper left" data-aos="fade-right">
+              <div class="timeline-content">
+                <div class="timeline-date">02/2025 - 06/2025</div>
+                <h3>Intern - App Developer</h3>
+                <h4>Radio Holland Belgium NV</h4>
+                <p>
+                  Completing my final year internship developing mobile and web
+                  applications for maritime industry solutions.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-wrapper right" data-aos="fade-left">
+              <div class="timeline-content">
+                <div class="timeline-date">09/2024 - 01/2025</div>
+                <h3>James Ensor VR Experience</h3>
+                <h4>Cross-Disciplinary Project</h4>
+                <p>
+                  Collaborated with students from diverse fields on an
+                  interactive VR experience about the renowned artist James
+                  Ensor.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-wrapper left" data-aos="fade-right">
+              <div class="timeline-content">
+                <div class="timeline-date">09/2024 - 01/2025</div>
+                <h3>GATAM Teaching Platform</h3>
+                <h4>School Project</h4>
+                <p>
+                  Developed an educational platform using ASP.NET and Blazor,
+                  enabling students to access learning modules and teachers to
+                  monitor progress.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-wrapper right" data-aos="fade-left">
+              <div class="timeline-content">
+                <div class="timeline-date">01/2024 - 06/2024</div>
+                <h3>Customer Portal Developer</h3>
+                <h4>Steelduxx Project</h4>
+                <p>
+                  Created a comprehensive track and trace website with order
+                  management capabilities, user authentication, and real-time
+                  location tracking.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-wrapper left" data-aos="fade-right">
+              <div class="timeline-content">
+                <div class="timeline-date">01/2024 - 06/2024</div>
+                <h3>VR Racing Game with AI</h3>
+                <h4>Unity Game Project</h4>
+                <p>
+                  Developed an immersive VR racing game with AI opponents
+                  trained using ML agents, featuring realistic physics and
+                  competitive gameplay.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-wrapper right" data-aos="fade-left">
+              <div class="timeline-content">
+                <div class="timeline-date">10/2023 - Present</div>
+                <h3>IT Support Specialist</h3>
+                <h4>Beego</h4>
+                <p>
+                  Providing technical support for seniors and individuals
+                  needing assistance with technology, troubleshooting hardware
+                  and software issues, and teaching computer skills.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-wrapper left" data-aos="fade-right">
+              <div class="timeline-content">
+                <div class="timeline-date">2021 - Present</div>
+                <h3>IT and Software Student</h3>
+                <h4>AP Hogeschool</h4>
+                <p>
+                  Studying Toegepaste Informatica with focus on application
+                  development, database management, and software engineering.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer modern-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <div class="footer-logo">
+              <h3>Karim Ibrahim</h3>
+              <p>App Developer & IT Student</p>
+            </div>
+            <p class="footer-tagline">Creating innovative digital solutions</p>
+            <div class="social-links">
+              <a href="https://github.com/KarimIbr"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/karim-khaled-ibrahim/"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="mailto:KarimKhaledIbrahim2003@gmail.com"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <div class="link-group">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+              </ul>
+            </div>
+            <div class="link-group">
+              <h4>More</h4>
+              <ul>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="link-group">
+              <h4>Contact</h4>
+              <ul class="contact-info">
+                <li><i class="fas fa-map-marker-alt"></i> Antwerp, Belgium</li>
+                <li>
+                  <i class="fas fa-envelope"></i>
+                  KarimKhaledIbrahim2003@gmail.com
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 Karim Ibrahim. All rights reserved.</p>
+          <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/modern.js"></script>
+  </body>
+</html>
