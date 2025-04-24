@@ -256,7 +256,7 @@ a:hover {
 }
 
 .dark-mode .theme-toggle {
-  color: var(--light-color);
+  color: white;
 }
 
 .theme-toggle:hover {
