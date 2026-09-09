@@ -205,6 +205,58 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(nextTestimonial, 5000);
     }
 
+    const contactForm = document.getElementById('contactForm');
+    const successModal = document.getElementById('successModal');
+    if (contactForm && successModal) {
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const closeModal = () => {
+            successModal.classList.remove('is-visible');
+            successModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('no-scroll');
+        };
+
+        contactForm.addEventListener('submit', async event => {
+            event.preventDefault();
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Sending...';
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { Accept: 'application/json' }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Form submission failed');
+                }
+
+                contactForm.reset();
+                successModal.classList.add('is-visible');
+                successModal.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('no-scroll');
+            } catch {
+                const notice = contactForm.parentElement.querySelector('.form-notice p');
+                if (notice) {
+                    notice.textContent = 'Something went wrong. Please email me directly instead.';
+                    notice.classList.add('form-error');
+                }
+            } finally {
+                submitButton.disabled = false;
+                submitButton.innerHTML = '<i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message';
+            }
+        });
+
+        successModal.querySelector('.success-modal-close').addEventListener('click', closeModal);
+        successModal.querySelector('.success-modal-done').addEventListener('click', closeModal);
+        successModal.addEventListener('click', event => {
+            if (event.target === successModal) closeModal();
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && successModal.classList.contains('is-visible')) closeModal();
+        });
+    }
+
     // Image placeholder fallback
     document.querySelectorAll('img').forEach(img => {
         const setImageState = (image, isMissing) => {
