@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <title>Redirecting</title>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+    <script>
+      const pageNames = ['about', 'skills', 'projects', 'experience', 'resume', 'contact'];
+      const match = window.location.pathname.match(/\/(?:about|skills|projects|experience|resume|contact)\/(about|skills|projects|experience|resume|contact)\.html$/);
+      const target = match && pageNames.includes(match[1]) ? `/${match[1]}/` : '/';
+      window.location.replace(target);
+    </script>
+  </body>
+</html>
