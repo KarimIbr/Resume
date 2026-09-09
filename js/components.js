@@ -9,9 +9,12 @@
     ['contact.html', 'Contact']
   ];
 
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const currentPage = window.location.pathname.replace(/\/$/, '');
   const navigationMarkup = navigationItems
-    .map(([href, label]) => `<li><a href="${href}">${label}</a></li>`)
+    .map(([href, label]) => {
+      const path = href === 'index.html' ? '/' : `/${href.replace('.html', '')}/`;
+      return `<li><a href="${path}">${label}</a></li>`;
+    })
     .join('');
 
   const header = document.querySelector('[data-site-header]');
@@ -19,7 +22,7 @@
     header.outerHTML = `
       <nav class="navbar modern-nav" aria-label="Primary navigation">
         <div class="container">
-          <a class="logo" href="index.html" aria-label="Karim Ibrahim home">
+          <a class="logo" href="/" aria-label="Karim Ibrahim home">
             <span class="logo-text">Karim Ibrahim</span>
             <span class="logo-dot" aria-hidden="true"></span>
           </a>
@@ -36,7 +39,7 @@
       </nav>`;
 
     document.querySelectorAll('.nav-links a').forEach(link => {
-      if (link.getAttribute('href') === currentPage) {
+      if (link.getAttribute('href').replace(/\/$/, '') === currentPage) {
         link.classList.add('active');
         link.setAttribute('aria-current', 'page');
       }
@@ -65,18 +68,18 @@
               <div class="link-group">
                 <h4>Quick Links</h4>
                 <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About</a></li>
-                  <li><a href="skills.html">Skills</a></li>
-                  <li><a href="projects.html">Projects</a></li>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/about/">About</a></li>
+                  <li><a href="/skills/">Skills</a></li>
+                  <li><a href="/projects/">Projects</a></li>
                 </ul>
               </div>
               <div class="link-group">
                 <h4>More</h4>
                 <ul>
-                  <li><a href="experience.html">Experience</a></li>
-                  <li><a href="resume.html">Resume</a></li>
-                  <li><a href="contact.html">Contact</a></li>
+                  <li><a href="/experience/">Experience</a></li>
+                  <li><a href="/resume/">Resume</a></li>
+                  <li><a href="/contact/">Contact</a></li>
                 </ul>
               </div>
               <div class="link-group">

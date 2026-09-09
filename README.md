@@ -12,9 +12,11 @@ A clean, modern, and responsive personal portfolio website. This website showcas
 
 ## Structure
 
-- **index.html** - Main HTML structure
-- **css/styles.css** - All styling for the website
-- **js/main.js** - JavaScript for interactive elements
+- **index.html** - Home page
+- **about/**, **skills/**, **projects/**, **experience/**, **resume/**, **contact/** - Clean URL page folders, each containing an `index.html`
+- **css/styles.css** and **css/modern.css** - Shared styling
+- **js/components.js** - Shared navigation and footer components
+- **js/main.js** - Shared interactive behavior
 - **img/** - Directory for images
 - **Karim-Ibrahim-Resume.pdf** - Resume file
 
@@ -25,6 +27,17 @@ A clean, modern, and responsive personal portfolio website. This website showcas
 3. Replace placeholder images with your own images
 4. Update social media links and contact information
 5. Deploy to your preferred hosting platform
+
+## URLs
+
+The site uses directory-based clean URLs for static hosting:
+
+- `/about/`
+- `/skills/`
+- `/projects/`
+- `/experience/`
+- `/resume/`
+- `/contact/`
 
 ## Customization
 

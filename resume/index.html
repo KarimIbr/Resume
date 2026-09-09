@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume - Karim Ibrahim</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/modern.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Resume page specific styles */
+      .resume-page {
+        padding: 120px 0 80px;
+        overflow-x: hidden;
+      }
+
+      .resume-page-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .resume-page-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: var(--dark-color);
+      }
+
+      .resume-page-header p {
+        color: var(--gray-color);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .resume-download-section {
+        background-color: white;
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--card-shadow);
+        padding: 40px;
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .dark-mode .resume-download-section {
+        background-color: #2a2f35;
+      }
+
+      .resume-download-section p {
+        margin-bottom: 25px;
+      }
+
+      .resume-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .timeline-container {
+        position: relative;
+        max-width: 1000px;
+        margin: 40px auto;
+      }
+
+      .timeline {
+        position: relative;
+      }
+
+      .timeline::after {
+        content: "";
+        position: absolute;
+        width: 4px;
+        background: linear-gradient(
+          to bottom,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      .timeline-wrapper {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+      }
+
+      .timeline-wrapper.left {
+        left: 0;
+      }
+
+      .timeline-wrapper.right {
+        left: 50%;
+      }
+
+      .timeline-wrapper::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        border: 4px solid var(--primary-color);
+        top: 20px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .dark-mode .timeline-wrapper::after {
+        background-color: #2a2f35;
+      }
+
+      .timeline-wrapper.left::after {
+        right: -12px;
+      }
+
+      .timeline-wrapper.right::after {
+        left: -12px;
+      }
+
+      .timeline-content {
+        background-color: white;
+        padding: 30px;
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--card-shadow);
+        position: relative;
+      }
+
+      .dark-mode .timeline-content {
+        background-color: #2a2f35;
+      }
+
+      .timeline-content::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 20px;
+        border: 10px solid;
+      }
+
+      .timeline-wrapper.left .timeline-content::after {
+        border-color: transparent white transparent transparent;
+        right: -20px;
+      }
+
+      .timeline-wrapper.right .timeline-content::after {
+        border-color: transparent transparent transparent white;
+        left: -20px;
+      }
+
+      .dark-mode .timeline-wrapper.left .timeline-content::after {
+        border-color: transparent #2a2f35 transparent transparent;
+      }
+
+      .dark-mode .timeline-wrapper.right .timeline-content::after {
+        border-color: transparent transparent transparent #2a2f35;
+      }
+
+      .timeline-date {
+        display: inline-block;
+        padding: 5px 15px;
+        background-color: rgba(67, 97, 238, 0.1);
+        color: var(--primary-color);
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .timeline-content h3 {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+
+      .timeline-content h4 {
+        font-size: 16px;
+        color: var(--gray-color);
+        margin-bottom: 15px;
+        font-weight: 500;
+      }
+
+      .timeline-content p {
+        line-height: 1.6;
+      }
+
+      @media (max-width: 768px) {
+        .timeline::after {
+          left: 31px;
+        }
+
+        .timeline-wrapper {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+
+        .timeline-wrapper.right {
+          left: 0;
+        }
+
+        .timeline-wrapper.left::after,
+        .timeline-wrapper.right::after {
+          left: 21px;
+        }
+
+        .timeline-wrapper.left .timeline-content::after,
+        .timeline-wrapper.right .timeline-content::after {
+          left: -20px;
+          border-color: transparent white transparent transparent;
+        }
+
+        .dark-mode .timeline-wrapper.left .timeline-content::after,
+        .dark-mode .timeline-wrapper.right .timeline-content::after {
+          border-color: transparent #2a2f35 transparent transparent;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div data-site-header></div>
+
+    <section class="resume-page">
+      <div class="container">
+        <div class="resume-page-header" data-aos="fade-up">
+          <h1>My Resume</h1>
+          <p>
+            An overview of my professional experience, education, and
+            achievements
+          </p>
+        </div>
+
+        <div
+          class="resume-download-section"
+          hidden
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <p>
+            You can view or download my complete resume using the buttons below:
+          </p>
+          <div class="resume-buttons">
+            <a
+              href="../Karim-Ibrahim-Resume.pdf"
+              class="btn btn-primary"
+              target="_blank"
+            >
+              <i class="fas fa-eye"></i> View Resume
+            </a>
+            <a href="../Karim-Ibrahim-Resume.pdf" class="btn btn-outline" download>
+              <i class="fas fa-download"></i> Download Resume
+            </a>
+          </div>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline">
+            <div class="timeline-wrapper left" data-aos="fade-right">
+              <div class="timeline-content">
+                <div class="timeline-date">2026 - Present</div>
+                <h3>International Business Management Student</h3>
+                <h4>Karel de Grote Hogeschool (KDG)</h4>
+                <p>
+                  Studying International Business Management to complement my
+                  technical background with business and organizational skills.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-wrapper right" data-aos="fade-left">
+              <div class="timeline-content">
+                <div class="timeline-date">2025 - Present</div>
+                <h3>Events Team Member</h3>
+                <h4>ASA Antwerp</h4>
+                <p>
+                  Helped plan and run events as part of the Asian Student
+                  Association Antwerp events team, supporting logistics and
+                  event coordination.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-wrapper left" data-aos="fade-right">
+              <div class="timeline-content">
+                <div class="timeline-date">10/2023 - Present</div>
+                <h3>IT Support Specialist</h3>
+                <h4>Beego</h4>
+                <p>
+                  Providing technical support, troubleshooting hardware and
+                  software, and teaching computer skills.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-wrapper left" data-aos="fade-right">
+              <div class="timeline-content">
+                <div class="timeline-date">2025 - 2026</div>
+                <h3>IT and AI Development</h3>
+                <h4>AP Hogeschool</h4>
+                <p>
+                  Completed an additional bachelor's degree focused on Python,
+                  machine learning, data analysis, and data-driven development.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-wrapper left" data-aos="fade-right">
+              <div class="timeline-content">
+                <div class="timeline-date">2025 - 2026</div>
+                <h3>AP Skills and Curriculum Analyzer</h3>
+                <h4>Data and AI Development Project</h4>
+                <p>
+                  Extracted and normalized skills from vacancies and AP courses,
+                  clustered related skills, and compared industry demand with
+                  the curriculum to identify covered and missing skills.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-wrapper right" data-aos="fade-left">
+              <div class="timeline-content">
+                <div class="timeline-date">02/2025 - 06/2025</div>
+                <h3>Intern - App Developer</h3>
+                <h4>Radio Holland Belgium NV</h4>
+                <p>
+                  Developed mobile and web applications for maritime industry
+                  solutions during my final year internship.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-wrapper left" data-aos="fade-right">
+              <div class="timeline-content">
+                <div class="timeline-date">2021 - 2025</div>
+                <h3>IT and Software Development</h3>
+                <h4>AP Hogeschool</h4>
+                <p>
+                  Bachelor's degree focused on application development,
+                  databases, software engineering, and full-stack development.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-wrapper right" data-aos="fade-left">
+              <div class="timeline-content">
+                <div class="timeline-date">09/2024 - 01/2025</div>
+                <h3>James Ensor VR Experience</h3>
+                <h4>Cross-Disciplinary Project</h4>
+                <p>
+                  Collaborated with students from diverse fields on an
+                  interactive VR experience about James Ensor.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-wrapper left" data-aos="fade-right">
+              <div class="timeline-content">
+                <div class="timeline-date">09/2024 - 01/2025</div>
+                <h3>GATAM Teaching Platform</h3>
+                <h4>School Project</h4>
+                <p>
+                  Developed an educational platform using ASP.NET and Blazor
+                  for learning modules and student progress tracking.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-wrapper right" data-aos="fade-left">
+              <div class="timeline-content">
+                <div class="timeline-date">01/2024 - 06/2024</div>
+                <h3>Customer Portal Developer</h3>
+                <h4>Steelduxx Project</h4>
+                <p>
+                  Created a track and trace website with order management,
+                  authentication, and real-time location tracking.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-wrapper left" data-aos="fade-right">
+              <div class="timeline-content">
+                <div class="timeline-date">01/2024 - 06/2024</div>
+                <h3>VR Racing Game with AI</h3>
+                <h4>Unity Game Project</h4>
+                <p>
+                  Developed an immersive VR racing game with AI opponents,
+                  realistic physics, and competitive gameplay.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div data-site-footer></div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
