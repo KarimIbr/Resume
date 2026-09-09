@@ -1347,6 +1347,23 @@ img.broken + .image-placeholder {
     .section {
         padding: 70px 0;
     }
+
+    .about-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .about-text,
+    .about-image {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .about-text p {
+        width: 100%;
+    }
     
     .navbar .container {
         padding: 1rem;

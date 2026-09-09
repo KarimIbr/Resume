@@ -1133,10 +1133,26 @@ a:hover {
     width: 240px;
     height: 240px;
   }
-  
-  .card-skills, .card-exp {
-    width: 120px;
-    padding: 10px;
+
+  .hero-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .floating-card,
+  .card-skills,
+  .card-exp {
+    position: relative;
+    inset: auto;
+    width: min(260px, 100%);
+    margin: 16px auto 0;
+    animation: none;
   }
   
   .footer-bottom {
