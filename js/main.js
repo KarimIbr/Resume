@@ -1,11 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize AOS animations
-    AOS.init({
-        duration: 800,
-        easing: 'ease',
-        once: true,
-        mirror: false
-    });
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease',
+            once: true,
+            mirror: false
+        });
+    }
+
+    const typedElement = document.querySelector('.typing-text');
+    if (typedElement && typeof Typed !== 'undefined') {
+        new Typed('.typing-text', {
+            strings: ['IT and AI Developer', 'Data Developer', 'Python Developer', 'Full-Stack Developer', 'Machine Learning Developer'],
+            typeSpeed: 80,
+            backSpeed: 40,
+            backDelay: 1500,
+            startDelay: 500,
+            loop: true
+        });
+    }
+
+    const themeToggle = document.querySelector('.theme-toggle');
+    const updateThemeToggle = () => {
+        const darkMode = document.body.classList.contains('dark-mode');
+        themeToggle?.classList.toggle('is-dark', darkMode);
+        themeToggle?.setAttribute('aria-pressed', String(darkMode));
+        if (themeToggle) {
+            themeToggle.innerHTML = `<i class="fas fa-${darkMode ? 'sun' : 'moon'}" aria-hidden="true"></i>`;
+        }
+    };
+
+    if (themeToggle) {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.body.classList.add('dark-mode');
+        }
+        updateThemeToggle();
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+            updateThemeToggle();
+        });
+    }
 
     // Mobile menu toggle
     const hamburger = document.querySelector('.hamburger');
@@ -13,8 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hamburger && navLinks) {
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
+            const isOpen = hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active', isOpen);
+            hamburger.setAttribute('aria-expanded', String(isOpen));
+            hamburger.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+            document.body.classList.toggle('no-scroll', isOpen);
         });
 
         // Close mobile menu when a nav link is clicked
@@ -22,6 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.setAttribute('aria-label', 'Open navigation');
+                document.body.classList.remove('no-scroll');
             });
         });
     }
@@ -162,54 +205,20 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(nextTestimonial, 5000);
     }
 
-    // Contact form handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Form submission is disabled intentionally
-            // Direct users to email instead (as shown in the form notice)
-        });
-    }
-    
-    // Set active page in navigation
-    const setActivePage = () => {
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        const navLinks = document.querySelectorAll('.nav-links a');
-        
-        navLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            if (href === currentPage) {
-                link.classList.add('active');
-            }
-        });
-    };
-    
-    setActivePage();
-
-    // Update the copyright year automatically
-    const currentYear = new Date().getFullYear();
-    const copyrightYear = document.querySelector('.copyright');
-    
-    if (copyrightYear) {
-        copyrightYear.textContent = copyrightYear.textContent.replace('2023', currentYear);
-    }
-    
     // Image placeholder fallback
     document.querySelectorAll('img').forEach(img => {
-        img.addEventListener('error', function() {
-            this.style.display = 'none';
-            const placeholder = this.parentElement.querySelector('.image-placeholder');
-            if (placeholder) {
-                placeholder.style.display = 'flex';
-            }
-        });
-        
-        img.addEventListener('load', function() {
-            const placeholder = this.parentElement.querySelector('.image-placeholder');
-            if (placeholder) {
-                placeholder.style.display = 'none';
-            }
-        });
+        const setImageState = (image, isMissing) => {
+            const wrapper = image.parentElement;
+            if (!wrapper) return;
+            wrapper.classList.toggle('image-missing', isMissing);
+            image.classList.toggle('broken', isMissing);
+        };
+
+        img.addEventListener('error', () => setImageState(img, true));
+        img.addEventListener('load', () => setImageState(img, false));
+
+        if (img.complete && img.naturalWidth === 0) {
+            setImageState(img, true);
+        }
     });
 }); 
